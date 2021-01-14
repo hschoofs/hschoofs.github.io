@@ -81,7 +81,7 @@ function handleBatteryLevelChanged(event) {
   flex = valFLEX; // + 200 + Math.floor(Math.random() * 50);
   hr = valHR; // + 100 + Math.floor(Math.random() * 50);
   eda = valEDA; // + 0 + Math.floor(Math.random() * 50);
-  document.getElementById("bat_vol").innerHTML = "battery_votage = " + eda;
+  document.getElementById("bat_vol").innerHTML = "bat=" + eda +"v";
   buffer.push(hr);
   if (buffer.length > 600) {
     buffer.shift();
