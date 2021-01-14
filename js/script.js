@@ -74,10 +74,14 @@ function handleBatteryLevelChanged(event) {
   let valHR = event.target.value.getInt32(4);
   let valFLEX = event.target.value.getInt32(8);
   //console.log("Vals are", valEDA, valHR, valFLEX)
+
+
+
   oldHr = hr ;
   flex = valFLEX; // + 200 + Math.floor(Math.random() * 50);
   hr = valHR; // + 100 + Math.floor(Math.random() * 50);
   eda = valEDA; // + 0 + Math.floor(Math.random() * 50);
+  document.getElementById("bat_vol").innerHTML = "battery_votage = " + eda;
   buffer.push(hr);
   if (buffer.length > 600) {
     buffer.shift();
