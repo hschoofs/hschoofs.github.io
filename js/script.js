@@ -545,7 +545,7 @@ $(function(){
 
   var y = d3.scaleLinear()
     //.domain([0, 300])
-    .domain([0, 1023])
+    .domain([50000, 65535])
     .range([height, 0]);
 
   var lineFlex = d3.line()
