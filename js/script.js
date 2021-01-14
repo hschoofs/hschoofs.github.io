@@ -198,7 +198,7 @@ function setBPM(_bpm) {
   } else if (calibrationStatus == "CALIBRATED") {
     $('#bpm').text(_bpm + " (" + addSign(_bpm, meanHR) + ")");
   } else {
-    $('#bpm').text(_bpm);
+    $('#bpm').text(hr);
   }
   bpmBuffer.push(_bpm)
   if (bpmBuffer.length > 180) {
