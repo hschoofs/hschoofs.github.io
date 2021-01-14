@@ -73,6 +73,7 @@ function handleBatteryLevelChanged(event) {
   let valEDA = event.target.value.getInt32(0);
   let valHR = event.target.value.getInt32(4);
   let valFLEX = event.target.value.getInt32(8);
+  let valBAT = event.target.value.getInt32(12);
   //console.log("Vals are", valEDA, valHR, valFLEX)
 
 
@@ -81,14 +82,15 @@ function handleBatteryLevelChanged(event) {
   flex = valFLEX; // + 200 + Math.floor(Math.random() * 50);
   hr = valHR; // + 100 + Math.floor(Math.random() * 50);
   eda = valEDA; // + 0 + Math.floor(Math.random() * 50);
-  bat = valEDA/100;
+  bat = valBAT/100;
 
-  if(eda <= 330){
-    document.getElementById("bat_vol").innerHTML = "battery low";
+  if(bat <= 330){
+    document.getElementById("bat_vol").innerHTML = "bat=" + bat +"v, powering off soon";
+    document.getElementById("bat_vol").style.color = 'red';
   }
   else{
     document.getElementById("bat_vol").innerHTML = "bat=" + bat +"v";
-    document.getElementById("bat_vol").style.color = 'red';
+    document.getElementById("bat_vol").style.color = 'green';
   }
 
   buffer.push(hr);
