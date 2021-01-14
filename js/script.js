@@ -82,8 +82,15 @@ function handleBatteryLevelChanged(event) {
   hr = valHR; // + 100 + Math.floor(Math.random() * 50);
   eda = valEDA; // + 0 + Math.floor(Math.random() * 50);
   bat = valEDA/100;
-  document.getElementById("bat_vol").innerHTML = "bat=" + bat +"v";
-  
+
+  if(eda <= 330){
+    document.getElementById("bat_vol").innerHTML = "battery low";
+  }
+  else{
+    document.getElementById("bat_vol").innerHTML = "bat=" + bat +"v";
+    document.getElementById("bat_vol").style.color = 'red';
+  }
+
   buffer.push(hr);
   if (buffer.length > 600) {
     buffer.shift();
