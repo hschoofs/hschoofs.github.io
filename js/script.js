@@ -84,7 +84,7 @@ function handleBatteryLevelChanged(event) {
   eda = valEDA; // + 0 + Math.floor(Math.random() * 50);
   bat = valBAT/100;
 
-  if(bat <= 330){
+  if(valBAT <= 330){
     document.getElementById("bat_vol").innerHTML = "bat=" + bat +"v, powering off soon";
     document.getElementById("bat_vol").style.color = 'red';
   }
